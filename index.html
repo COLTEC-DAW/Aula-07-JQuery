@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>jQuery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="libs/shower/themes/bright/styles/screen.css">
+  <link rel="stylesheet" href="libs/highlight/styles/default.css">
+  <link rel="stylesheet" type="text/css" href="css/960gs.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body class="list">
+<header class="caption">
+  <h1>jQuery</h1>
+  <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+</header>
+<section class="slide cover" id="Cover">
+  <div>
+    <h2>jQuery</h2>
+    <p>João Eduardo Montandon</p>
+    <p>Desenvolvimento de Aplicativos Web - COLTEC/MG</p>
+
+  <img src="images/wallpaper_coltec_wide.png" alt="" />
+</div>
+</section>
+  <section class="slide section">
+    <div>
+      <h2>
+        jQuery: write less, do more
+      </h2>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Introdução</h2>
+      <p>
+        Biblioteca criada com o propósito de tornar o desenvolvimento em JavaScript mais rápido, fácil e direto.
+      </p>
+      <p>
+        Provê uma série de funções/métodos que tornam mais simples a realização de tarefas rotineiras.
+      </p>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Introdução</h2>
+      <p>
+        Principais recursos:
+      </p>
+      <ul>
+        <li><b>Manipulação HTML/DOM</b></li>
+        <li><b>Manipulação CSS</b></li>
+        <li><b>Eventos HTML</b></li>
+        <li>Efeitos e animações</li>
+        <li>AJAX</li>
+        <li>Utilitários</li>
+      </ul>
+    </div>
+  </section>
+  <section class="slide">
+    <div class="container_12">
+      <h2>Importando jQuery</h2>
+        <span style="text-align: center"><b>Via CDN</b></span>
+        <pre style="font-size: 0.7em;" >
+          <code>&lt;head&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code>
+        </pre>
+        <span style="text-align: center"><b>Localmente: </b></span>
+        Fazer o download em <a href="http://jquery.com">jquery.com</a>
+        <pre style="font-size: 0.7em;">
+          <code>&lt;head&gt;
+&lt;script src="jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+          </code>
+        </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Sintaxe Básica</h2>
+      <pre>
+        <code>
+$("seletor").acao();
+        </code>
+      </pre>
+      <ul>
+        <li><code>$</code> Acesso a biblioteca jQuery</li>
+        <li><code>"seletor"</code> Lista de seletores onde a ação será executada</li>
+        <li><code>acao();</code> Ação a ser executada sobre os elementos</li>
+      </ul>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Sintaxe Básica</h2>
+      <pre>
+        <code>
+$("#myBtn").click(function(){
+        $("p").hide();
+});
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>A Função <code>document.ready()</code></h2>
+      <p>
+        Muitas das ações em jQuery envolverão manipulação do DOM. Logo, as ações devem ser realizadas somente depois do DOM estar carregado. Isso pode ser feito por meio da função <code>document.read()</code>.
+      </p>
+      <pre>
+        <code>
+$(document).ready(function(){
+   // suas ações aqui...
+});
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>A Função <code>document.ready()</code></h2>
+      <pre>
+        <code>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p:first").hide();
+    });
+});
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div class="">
+      <h2>Manipulação DOM</h2>
+      <p>
+        jQuery fornece formas mais fáceis de se recuperar e manipular elementos no DOM
+      </p>
+      <p style="margin-bottom: 10px;">
+        Para encontrar elementos no DOM:
+      </p>
+      <pre>
+        <code>$("selector")</code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Manipulação DOM: Ancestrais</h2>
+      <p style="margin-bottom: 10px;">
+        Buscar o pai de um elemento no DOM:
+      </p>
+      <pre>
+        <code>$("selector").parent()</code>
+      </pre>
+      <p style="margin-bottom: 10px;">
+        Buscar os ancestrais de um elemento no DOM:
+      </p>
+      <pre>
+        <code>$("selector").parents()</code>
+      </pre>
+      <p style="margin-bottom: 10px;">
+        Buscar os ancestrais de um elemento até um elementos específico:
+      </p>
+      <pre>
+        <code>$("selector").parentsUntil("selector")</code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Manipulação DOM: Descendentes</h2>
+      <p style="margin-bottom: 10px;">
+        Buscar os filhos de um elemento no DOM:
+      </p>
+      <pre>
+        <code>$("selector").children()</code>
+      </pre>
+      <p style="margin-bottom: 10px;">
+        Busca elementos que são descendentes no DOM:
+      </p>
+      <pre>
+        <code>$("selector").find("selector")</code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Manipulação DOM: Vizinhos</h2>
+      <p style="margin-bottom: 10px;">
+        Busca o próximo elemento:
+      </p>
+      <pre>
+        <code>$("selector").next()</code>
+      </pre>
+      <p style="margin-bottom: 10px;">
+        Busca o elemento anterior:
+      </p>
+      <pre>
+        <code>$("selector").prev()</code>
+      </pre>
+      <p style="margin-bottom: 10px;">
+        Busca todos os elementos vizinhos:
+      </p>
+      <pre>
+        <code>$("selector").siblings()</code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Manipulação CSS</h2>
+      <p>
+        Uma vez encontrado os elementos desejados, podemos customizá-los facilmente via jQuery!!
+      </p>
+      <pre>
+        <code>
+$("selector").css("propriedade"); // lê uma propriedade CSS
+$("selector").css("propriedade", "valor"); // customiza uma propriedade CSS
+$("selector").css({"p":"v", "p":"v", "p":"v"}); // customiza várias propriedades
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Manipulação CSS</h2>
+      <pre>
+        <code>
+alert($("div").css("background-color"));
+
+$(".lead").css("font-size", "20px");
+
+$("div").css({"margin": "2%", "padding": "5%"});
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2 style="margin-bottom: 18px;">Eventos</h2>
+      <p style="margin-bottom: 10px">
+        jQuery possui uma série de funções que tratam eventos dos componentes HTML.
+      </p>
+      <table style="font-size: 0.7em; margin-bottom: 10px;">
+        <tr>
+          <td>Evento</td><td>Ação</td>
+        </tr>
+        <tr>
+          <td><code>click()</code></td><td>Evento disparado no clique</td>
+        </tr>
+        <tr>
+          <td><code>dblclick()</code></td><td>Evento disparado no clique duplo</td>
+        </tr>
+        <tr>
+          <td><code>focus()</code></td><td>Evento disparado no foco</td>
+        </tr>
+        <tr>
+          <td><code>hover()</code></td><td>Evento disparado quando o mouse passa sobre o elemento</td>
+        </tr>
+        <tr>
+          <td><code>scroll()</code></td><td>Evento disparado quando há scroll do elemento</td>
+        </tr>
+        <tr>
+          <td><code>submit()</code></td><td>Evento disparado quando um submit é disparado</td>
+        </tr>
+      </table>
+      <p>
+        Lista de eventos disponíveis <a href="https://api.jquery.com/category/events/">aqui</a>.
+      </p>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Eventos</h2>
+      <pre>
+        <code>
+$( "#bomb" ).click(function() {
+  alert( "The bomb has been planted" );
+});
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Eventos</h2>
+      <pre>
+        <code>
+$( "div:first" ).dblclick(function() {
+  $(this).toggleClass( "dbl" );
+});
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Eventos</h2>
+      <pre>
+        <code>
+$( "tr" ).hover(
+  function() {
+    $( this ).fadeOut("slow");
+  }, function() {
+    $( this ).fadeIn("slow");
+  }
+);
+        </code>
+      </pre>
+    </div>
+  </section>
+  <section class="slide">
+    <div>
+      <h2>Referências</h2>
+      <p>
+        <a href="http://api.jquery.com/">jQuery: Official Documentation</a>
+      </p>
+      <p>
+        <a href="http://www.w3schools.com/jquery/">w3schools: jQuery Tutorial</a>
+      </p>
+    </div>
+  </section>
+  <!-- Barra de progresso, comente se deseja remover da apresentação -->
+  <div class="progress"><div></div></div>
+  <script src="libs/shower/shower.min.js"></script>
+  <script src="libs/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
